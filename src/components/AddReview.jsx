@@ -16,10 +16,10 @@ class AddReview extends Component {
   }
 
   handleChange(event) {
-    const { userName, value } = event.target;
+    const { name, value } = event.target;
 
     this.setState({
-      [userName]: value
+      [name]: value
     });
   }
 
@@ -28,7 +28,7 @@ class AddReview extends Component {
 
     const { imdbid, userName, rating } = this.state;
     //http://localhost:4000/api/reviews
-    await axios.post('http://localhost:4000/api/reviews/', {
+    await axios.post('https://carlo-backend-pelis.onrender.com/api/reviews/', {
       imdbid,
       userName,
       rating
